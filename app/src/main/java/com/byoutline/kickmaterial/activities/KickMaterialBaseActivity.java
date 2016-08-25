@@ -36,6 +36,7 @@ public abstract class KickMaterialBaseActivity extends BaseAppCompatActivity imp
     private int actionBarAutoHideSignal = 0;
     private boolean actionBarShown = true;
 
+//    todo get the activity transition
     protected static Bundle getSharedElementsBundle(Activity activity, View... sharedViews) {
         final Bundle options;
         if (LUtils.hasL()) {
@@ -46,7 +47,7 @@ public abstract class KickMaterialBaseActivity extends BaseAppCompatActivity imp
         return options;
     }
 
-
+//  todo - make option transition
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private static Bundle getSharedElementsBundleL(Activity activity, View... sharedViews) {
         Bundle options;

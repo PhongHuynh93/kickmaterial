@@ -10,11 +10,13 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
-import android.view.*;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
+
 import com.byoutline.cachedfield.CachedFieldWithArg;
 import com.byoutline.cachedfield.FieldState;
 import com.byoutline.cachedfield.FieldStateListener;
@@ -29,7 +31,11 @@ import com.byoutline.kickmaterial.events.CategoriesFetchedEvent;
 import com.byoutline.kickmaterial.events.DiscoverProjectsFetchedErrorEvent;
 import com.byoutline.kickmaterial.events.DiscoverProjectsFetchedEvent;
 import com.byoutline.kickmaterial.managers.LoginManager;
-import com.byoutline.kickmaterial.model.*;
+import com.byoutline.kickmaterial.model.Category;
+import com.byoutline.kickmaterial.model.DiscoverQuery;
+import com.byoutline.kickmaterial.model.DiscoverResponse;
+import com.byoutline.kickmaterial.model.DiscoverType;
+import com.byoutline.kickmaterial.model.Project;
 import com.byoutline.kickmaterial.utils.LUtils;
 import com.byoutline.kickmaterial.views.EndlessRecyclerView;
 import com.byoutline.ottoeventcallback.PostFromAnyThreadBus;
@@ -37,12 +43,18 @@ import com.byoutline.secretsauce.utils.ViewUtils;
 import com.software.shell.fab.ActionButton;
 import com.squareup.otto.Bus;
 import com.squareup.otto.Subscribe;
+
 import org.parceler.Parcels;
-import timber.log.Timber;
+
+import java.util.List;
 
 import javax.annotation.Nullable;
 import javax.inject.Inject;
-import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+import timber.log.Timber;
 
 import static com.byoutline.kickmaterial.activities.CategoriesListActivity.ARG_CATEGORY;
 import static com.byoutline.kickmaterial.activities.CategoriesListActivity.launch;
@@ -270,6 +282,7 @@ public class ProjectsListFragment extends KickMaterialFragment implements Projec
 
     @Override
     public void projectClicked(int position, SharedViews views) {
+//        todo the item which was clicked is the shared element item
         Project project = adapter.getItem(position);
         views.add(showCategoriesFab);
         ProjectDetailsActivity.launch(getActivity(), project, views.asArray());
