@@ -18,8 +18,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AnimationUtils;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
+
 import com.byoutline.kickmaterial.KickMaterialApp;
 import com.byoutline.kickmaterial.R;
 import com.byoutline.kickmaterial.adapters.ProjectsAdapter;
@@ -42,11 +41,16 @@ import com.squareup.otto.Bus;
 import com.squareup.otto.Subscribe;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
+
 import org.parceler.Parcels;
-import timber.log.Timber;
+
+import java.util.List;
 
 import javax.inject.Inject;
-import java.util.List;
+
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+import timber.log.Timber;
 
 /**
  * @author Pawel Karczewski <pawel.karczewski at byoutline.com> on 2015-01-03
@@ -80,6 +84,7 @@ public class ProjectDetailsActivity extends KickMaterialBaseActivity implements 
 
     public static void launch(Activity context, Project project, View... sharedViews) {
         final Bundle options;
+        // TODO: 8/25/16 tạo share element khi chạy activity mới
         if (LUtils.hasL()) {
             options = getSharedElementsBundle(context, sharedViews);
         } else {
@@ -89,8 +94,9 @@ public class ProjectDetailsActivity extends KickMaterialBaseActivity implements 
 
         Parcelable wrapped = Parcels.wrap(project);
         intent.putExtra(EXTRA_PROJECT, wrapped);
-        // Preload big photo
+        // todo, do ta sd image lúc nhỏ lúc to cho nên ta cần picasso (hơn glide) - để load image ở dô phân giải fullscreen, Preload big photo
         Picasso.with(context).load(project.getBigPhotoUrl());
+        // TODO: 8/25/16 start activity with shared element
         ActivityCompat.startActivity(context, intent, options);
     }
 
@@ -119,6 +125,10 @@ public class ProjectDetailsActivity extends KickMaterialBaseActivity implements 
         titleFontMinSize = getResources().getDimensionPixelSize(R.dimen.font_16);
         imageHeight = getResources().getDimensionPixelSize(R.dimen.project_details_photo_height);
         imageWidth = (int) (imageHeight * ProjectsAdapter.IMAGE_RATIO);
+
+        /**
+         * fixme - khi mà ta click 1 item, thì nó tạo anim từ dưới đi lên
+         */
         binding.detailsContainer.startAnimation(AnimationUtils.loadAnimation(ProjectDetailsActivity.this, R.anim.slide_from_bottom));
         loadProjectData();
         launchPostTransitionAnimations();
@@ -146,20 +156,26 @@ public class ProjectDetailsActivity extends KickMaterialBaseActivity implements 
     }
 
     private void loadProjectData() {
+        // todo set title
         ViewUtils.setTextOrClear(binding.projectSubtitleTv, getString(R.string.project_details_made_by, project.getAuthorName()));
         if (LUtils.hasL()) {
             animateAlphaAfterTransition(binding.projectSubtitleTv);
         }
 
+        // todo set progress
         binding.projectBackingProgress.setText(project.isFunded() ? R.string.funded : R.string.backing_in_progress);
 
+        // todo set cái thanh progress
         binding.projectItemBigProgressSb.setProgress((int) project.getPercentProgress());
+
+        // todo - set cái thanh progress info
         ProjectsAdapter.setProjectDetailsInfo(binding.projectItemBigGatheredMoneyTv, binding.projectItemBigPledgedOfTv,
                 binding.projectItemBigDaysLeft, binding.projectItemTimeLeftTypeTv, project);
 
         // TODO: animate elevation on scroll.
         ViewCompat.setElevation(binding.detailsContainer, ViewUtils.convertDpToPixel(4, ProjectDetailsActivity.this));
 
+        // todo - load photo trong screen này
         loadProjectPhoto();
     }
 

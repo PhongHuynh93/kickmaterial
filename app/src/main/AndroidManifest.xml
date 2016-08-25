@@ -5,7 +5,7 @@
     package="com.byoutline.kickmaterial">
 
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:name=".KickMaterialApp"
@@ -15,32 +15,39 @@
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
 
-
         <activity
             android:name="com.byoutline.kickmaterial.activities.MainActivity"
             android:label="@string/app_name">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
+        <!--todo - declare parent activity so up icon can nav to it.-->
         <activity
             android:name="com.byoutline.kickmaterial.activities.ProjectDetailsActivity"
-            android:parentActivityName="com.byoutline.kickmaterial.activities.MainActivity" />
-        <activity android:name="com.byoutline.kickmaterial.activities.RewardsListActivity" />
-        <activity android:name="com.byoutline.kickmaterial.activities.CategoriesListActivity" />
+            android:parentActivityName="com.byoutline.kickmaterial.activities.MainActivity"/>
+
+        <activity android:name="com.byoutline.kickmaterial.activities.RewardsListActivity"/>
+
+        <activity android:name="com.byoutline.kickmaterial.activities.CategoriesListActivity"/>
+
+        <!--todo - make video always landscape-->
         <activity
             android:name="com.byoutline.kickmaterial.activities.VideoActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"/>
+
+        <!--todo - for activity handle config change, so it not restarts-->
         <activity
             android:name="com.byoutline.secretsauce.activities.WebViewActivityV7"
             android:configChanges="orientation|screenSize"
-            android:theme="@style/AppTheme.Base" />
+            android:theme="@style/AppTheme.Base"/>
+
         <activity
             android:name="com.byoutline.secretsauce.activities.WebViewFlickrActivity"
             android:configChanges="orientation|screenSize"
-            android:theme="@style/AppTheme.Base" />
+            android:theme="@style/AppTheme.Base"/>
 
     </application>
 
