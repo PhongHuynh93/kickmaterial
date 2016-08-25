@@ -23,7 +23,8 @@ import android.widget.ScrollView;
 import java.util.ArrayList;
 
 /**
- * A custom ScrollView that can accept a scroll listener.
+ * todo - A custom ScrollView that can accept a scroll listener
+ * it is a new scrollview
  */
 public class ObservableScrollView extends ScrollView {
     private ArrayList<Callbacks> callbacks = new ArrayList<>();

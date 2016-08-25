@@ -95,6 +95,7 @@
         <item name="customFont">Roboto_Regular.ttf</item>
     </style>
 
+    <!--style for textview-->
     <style name="ProjectDescription" parent="LightFontStyle">
         <item name="android:textColor">@color/text_grey</item>
         <item name="android:layout_width">match_parent</item>

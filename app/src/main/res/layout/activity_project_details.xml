@@ -4,8 +4,8 @@
         xmlns:fab="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools">
 
+    <!--todo declare var obj-->
     <data>
-
         <variable
             name="project"
             type="android.databinding.ObservableField&lt;com.byoutline.kickmaterial.model.ProjectDetails>"/>
@@ -49,6 +49,8 @@
                         android:layout_marginRight="@dimen/project_number_details_padding"
                         android:text="@string/description"/>
 
+                    <!--todo - project description has data binding-->
+                    <!--todo - style declare in style.xml-->
                     <com.byoutline.secretsauce.views.CustomFontTextView
                         android:id="@+id/project_description_tv"
                         style="@style/ProjectDescription"
@@ -71,6 +73,7 @@
                         android:text="@string/read_more"
                         android:textColor="@color/green_primary"/>
 
+                    <!--a transparent separater-->
                     <View
                         style="@style/ProjectSeparator"
                         android:layout_height="2dp"
@@ -83,6 +86,7 @@
                         android:paddingLeft="@dimen/project_number_details_padding"
                         android:paddingTop="@dimen/project_number_details_padding">
 
+                        todo - has data binding
                         <com.byoutline.secretsauce.views.RoundedImageView
                             android:id="@+id/author_photo_iv"
                             android:layout_width="@dimen/project_auth_photo_size"
@@ -107,6 +111,7 @@
                                 android:layout_marginTop="5dp"
                                 android:text="@string/created_by"/>
 
+                            <!--todo - has data binding-->
                             <com.byoutline.secretsauce.views.CustomFontTextView
                                 android:id="@+id/project_author_name_tv"
                                 style="@style/ProjectAuthorDetails"
@@ -181,6 +186,7 @@
         </com.byoutline.kickmaterial.views.ObservableScrollView>
 
 
+        <!--it contains image, and It has a progress bar-->
         <RelativeLayout
             android:id="@+id/details_header"
             android:layout_width="match_parent"

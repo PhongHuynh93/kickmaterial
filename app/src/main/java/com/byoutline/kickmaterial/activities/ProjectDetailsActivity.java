@@ -106,6 +106,8 @@ public class ProjectDetailsActivity extends KickMaterialBaseActivity implements 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+//        todo - declare data binding
         binding = DataBindingUtil.setContentView(this, R.layout.activity_project_details);
         ButterKnife.bind(this);
         KickMaterialApp.component.inject(this);
@@ -113,14 +115,14 @@ public class ProjectDetailsActivity extends KickMaterialBaseActivity implements 
         supportPostponeEnterTransition();
         handleArguments();
 
+        // TODO: 8/25/16 set up toolbar, declare up icon
         injectViewsAndSetUpToolbar();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false); // Hide default toolbar title
+
         binding.scrollView.addCallbacks(this);
         minTitlesMarginTop = ViewUtils.dpToPx(32, getApplicationContext());
         maxTitlesMarginTop = getResources().getDimensionPixelSize(R.dimen.titles_container_margin_top) - getResources().getDimensionPixelSize(R.dimen.status_bar_height);
-
-
         maxTitlesMarginLeft = ViewUtils.dpToPx(32, getApplicationContext());
         maxTitlePaddingRight = ViewUtils.dpToPx(72, getApplicationContext());
         maxParallaxValue = getResources().getDimensionPixelSize(R.dimen.project_details_photo_height) / 3;
@@ -133,10 +135,15 @@ public class ProjectDetailsActivity extends KickMaterialBaseActivity implements 
          * todo - khi mà ta click 1 item, thì nó tạo anim từ dưới đi lên
          */
         binding.detailsContainer.startAnimation(AnimationUtils.loadAnimation(ProjectDetailsActivity.this, R.anim.slide_from_bottom));
+
+//        todo load project data
         loadProjectData();
+
+        // todo - chạy animation
         launchPostTransitionAnimations();
     }
 
+    // TODO: 8/25/16 ? binding là gì
     private void launchPostTransitionAnimations() {
         if (LUtils.hasL()) {
             ActivityCompat.setEnterSharedElementCallback(this, new SharedElementCallback() {
@@ -183,6 +190,7 @@ public class ProjectDetailsActivity extends KickMaterialBaseActivity implements 
     }
 
     private void loadProjectPhoto() {
+        // todo - get image cache from picasso
         Bitmap bitmap = picassoCache.getPlaceholder(project.getBigPhotoUrl());
         boolean bigPhotoMustBeFetched = bitmap == null;
         if (bigPhotoMustBeFetched) {
