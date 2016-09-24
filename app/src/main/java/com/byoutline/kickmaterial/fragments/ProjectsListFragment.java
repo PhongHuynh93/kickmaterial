@@ -254,7 +254,7 @@ public class ProjectsListFragment extends KickMaterialFragment implements Projec
         projectListRv.setEndlessScrollListener(this);
         projectListRv.setLayoutManager(layoutManager);
 
-
+        // TODO: 9/24/16 pass the listener to the recyclerview adapter
         adapter = new ProjectsAdapter(getActivity(), this, showHeader, itemViewTypeProvider);
         projectListRv.setAdapter(adapter);
     }
