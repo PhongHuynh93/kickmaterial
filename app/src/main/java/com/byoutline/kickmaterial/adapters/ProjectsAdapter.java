@@ -199,6 +199,7 @@ public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.ViewHo
         }
     }
 
+    // TODO: 9/24/16 which row takes 2 column and which row take one column, depend on position
     public final static class ItemViewTypeProvider {
         private final boolean showHeader;
 
