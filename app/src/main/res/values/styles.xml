@@ -23,6 +23,7 @@
     <style name="AppTheme" parent="AppTheme.BaseTranslucentStatus">
     </style>
 
+    <!--todo make custome style which appeared in xml, put here-->
     <style name="TitleTextStyle">
         <item name="android:textSize">18sp</item>
         <item name="android:color">@color/ab_text_color</item>
