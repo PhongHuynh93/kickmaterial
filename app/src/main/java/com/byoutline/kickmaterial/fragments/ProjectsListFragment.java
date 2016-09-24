@@ -337,6 +337,7 @@ public class ProjectsListFragment extends KickMaterialFragment implements Projec
         }
     }
 
+    // TODO: 9/24/16 declare search view
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         SearchView searchView = SearchListFragment.getSearchView(getActivity(), menu);
