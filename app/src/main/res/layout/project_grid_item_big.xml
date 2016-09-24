@@ -25,6 +25,7 @@
                 android:orientation="vertical"
                 android:paddingBottom="20dp">
 
+                <!--todo use this textview custom to use the custom font with transition name to shared element-->
                 <com.byoutline.secretsauce.views.CustomFontTextView
                     android:id="@+id/project_item_big_title_tv"
                     style="@style/ProjectItemNameStyle"
