@@ -111,6 +111,7 @@ public class ProjectsListFragment extends KickMaterialFragment implements Projec
         rootView = inflater.inflate(R.layout.fragment_projects, container, false);
         KickMaterialApp.component.inject(this);
         ButterKnife.bind(this, rootView);
+//        todo - enable auto hide toolbar
         hostActivity.enableActionBarAutoHide(projectListRv);
         maxScroll = 2 * getResources().getDimensionPixelSize(R.dimen.project_header_padding_top) + ViewUtils.dpToPx(48, getActivity());
         actionbarScrollPoint = ViewUtils.dpToPx(24, getActivity());
