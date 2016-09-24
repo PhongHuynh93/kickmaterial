@@ -148,6 +148,7 @@ public class ProjectsListFragment extends KickMaterialFragment implements Projec
         });
     }
 
+    // TODO: 9/24/16 define when to show or hide the toolbar depend on scroll 
     @Override
     protected void setUpListeners() {
         super.setUpListeners();
@@ -244,7 +245,7 @@ public class ProjectsListFragment extends KickMaterialFragment implements Projec
                 if (itemViewTypeProvider.getViewType(position) == ProjectsAdapter.NORMAL_ITEM) {
                     return 1;
                 }
-                return 2;v
+                return 2;
             }
         });
 
