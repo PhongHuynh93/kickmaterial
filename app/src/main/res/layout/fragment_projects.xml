@@ -19,6 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <!--todo - this is EndlessRecyclerView class (we can get this class) -->
         <com.byoutline.kickmaterial.views.EndlessRecyclerView
             android:id="@+id/project_recycler_view"
             android:layout_width="match_parent"
