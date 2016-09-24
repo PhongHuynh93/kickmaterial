@@ -271,6 +271,7 @@ public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.ViewHo
                         projectItemBigProgressSb,
                         projectItemBigGatheredMoneyTv, projectItemBigBackersTv, projectItemBigTimeLeft,
                         projectItemBigPledgedOfTv, projectItemBigBackersLabel, projectItemBigTimeLeftType);
+//              todo   when a item in adapter was clicked, call the listener to implement this, not this adapter
                 mListener.projectClicked(getAdapterPosition(), views);
             }
         }
