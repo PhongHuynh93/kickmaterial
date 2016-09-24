@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-
+    <!--todo when use with style 21, add shared element-->
     <style name="AppTheme" parent="AppTheme.BaseTranslucentStatus">
         <item name="android:windowContentTransitions">true</item>
         <!--<item name="android:windowAllowEnterTransitionOverlap">true</item>-->
