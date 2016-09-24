@@ -138,6 +138,7 @@ public class ProjectsListFragment extends KickMaterialFragment implements Projec
         configureSwipeRefresh();
     }
 
+    // TODO: 9/24/16 when refresh, reset page to 1, load again the page 
     public void configureSwipeRefresh() {
         int altColor = category == null ? R.color.green_dark : category.colorResId;
         swipeRefreshLayout.setColorSchemeResources(altColor, R.color.green_primary);
@@ -148,7 +149,7 @@ public class ProjectsListFragment extends KickMaterialFragment implements Projec
         });
     }
 
-    // TODO: 9/24/16 define when to show or hide the toolbar depend on scroll 
+    // TODO: 9/24/16 define when to show or hide the toolbar depend on scroll
     @Override
     protected void setUpListeners() {
         super.setUpListeners();
