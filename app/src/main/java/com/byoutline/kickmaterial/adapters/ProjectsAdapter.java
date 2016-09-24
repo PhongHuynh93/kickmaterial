@@ -49,6 +49,8 @@ public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.ViewHo
         this.projectClickListener = projectClickListener;
         this.showHeader = showHeader;
         this.itemViewTypeProvider = itemViewTypeProvider;
+
+//       todo make the custome height and width depend on ratio
         smallItemHeight = context.getResources().getDimensionPixelSize(R.dimen.project_item_big_photo_height);
         bigItemHeight = context.getResources().getDimensionPixelSize(R.dimen.project_item_big_height);
         smallItemWidth = (int) (smallItemHeight * IMAGE_RATIO);
