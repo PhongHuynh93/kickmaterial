@@ -120,7 +120,7 @@ public class ProjectsListFragment extends KickMaterialFragment implements Projec
         return rootView;
     }
 
-    // TODO: 9/24/16 get argument in different method 
+    // TODO: 9/24/16 get argument in different method
     private void getArgs() {
         Bundle args = getArguments();
         if (args != null && args.containsKey(ARG_CATEGORY)) {
@@ -234,17 +234,17 @@ public class ProjectsListFragment extends KickMaterialFragment implements Projec
         layoutManager = new GridLayoutManager(getActivity(), 2);
 
         final boolean showHeader = sharedPreferences.getBoolean(PREFS_SHOW_HEADER, true);
-        // TODO: decide when to hide it.
         sharedPreferences.edit().putBoolean(PREFS_SHOW_HEADER, false).apply();
         final ProjectsAdapter.ItemViewTypeProvider itemViewTypeProvider = new ProjectsAdapter.ItemViewTypeProvider(showHeader);
 
+//        todo this view take up 1 or 2 column depend on type
         layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
             @Override
             public int getSpanSize(int position) {
                 if (itemViewTypeProvider.getViewType(position) == ProjectsAdapter.NORMAL_ITEM) {
                     return 1;
                 }
-                return 2;
+                return 2;v
             }
         });
 
