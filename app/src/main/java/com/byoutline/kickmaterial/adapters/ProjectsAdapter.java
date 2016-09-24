@@ -65,6 +65,7 @@ public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.ViewHo
         timeLeftTypeTv.setText(timeLeft.description);
     }
 
+    // TODO: 9/24/16 use custome textview settext to check null if cant not find the view
     public static void setProjectDetailsInfo(TextView title, TextView descTv, TextView gatheredMoneyTv, TextView totalAmountTv, TextView backersTv, TextView timeLeftValueTv, TextView timeLeftTypeTv, Project project) {
         ViewUtils.setText(title, project.getProjectName());
         ViewUtils.setTextForViewOrHideIt(descTv, project.desc);
