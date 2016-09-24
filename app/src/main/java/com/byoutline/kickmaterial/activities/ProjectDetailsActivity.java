@@ -82,6 +82,7 @@ public class ProjectDetailsActivity extends KickMaterialBaseActivity implements 
     private int imageHeight;
     private ActivityProjectDetailsBinding binding;
 
+    // TODO: 9/24/16 get the intent via bundle, check the version to only implement shared preferences in android > 5
     public static void launch(Activity context, Project project, View... sharedViews) {
         final Bundle options;
         // TODO: 8/25/16 tạo share element khi chạy activity mới nhét vào option

@@ -285,6 +285,7 @@ public class ProjectsListFragment extends KickMaterialFragment implements Projec
         return false;
     }
 
+//    todo when clicked, open another activity
     @Override
     public void projectClicked(int position, SharedViews views) {
 //        todo the item which was clicked is the shared element item
