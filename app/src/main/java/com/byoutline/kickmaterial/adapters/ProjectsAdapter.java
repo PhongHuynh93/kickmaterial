@@ -271,6 +271,7 @@ public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.ViewHo
         @Override
         public void onClick(View v) {
             if (mListener != null && getItemViewType() != HEADER_ITEM) {
+                // TODO: 9/24/16 get all the shared view, and pass to another activity to implement the shared element
                 SharedViews views = new SharedViews(projectItemBigPhotoIv, projectItemBigTitleTv, projectItemBigTitleTv,
                         projectItemBigProgressSb,
                         projectItemBigGatheredMoneyTv, projectItemBigBackersTv, projectItemBigTimeLeft,
