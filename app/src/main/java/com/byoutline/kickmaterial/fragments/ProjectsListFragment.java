@@ -138,7 +138,7 @@ public class ProjectsListFragment extends KickMaterialFragment implements Projec
         configureSwipeRefresh();
     }
 
-    // TODO: 9/24/16 when refresh, reset page to 1, load again the page 
+    // TODO: 9/24/16 when refresh, reset page to 1, load again the page
     public void configureSwipeRefresh() {
         int altColor = category == null ? R.color.green_dark : category.colorResId;
         swipeRefreshLayout.setColorSchemeResources(altColor, R.color.green_primary);
@@ -204,6 +204,7 @@ public class ProjectsListFragment extends KickMaterialFragment implements Projec
         super.onViewStateRestored(savedInstanceState);
     }
 
+    // TODO: 9/24/16 load page again when start app again, register bus and unregister to it
     @Override
     public void onResume() {
         super.onResume();
