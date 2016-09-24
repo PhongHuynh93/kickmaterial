@@ -344,6 +344,7 @@ public class ProjectDetailsActivity extends KickMaterialBaseActivity implements 
         startActivity(intent);
     }
 
+    // TODO: 9/24/16 when scroll, change the property of views 
     @Override
     public void onScrollChanged(int deltaX, int deltaY) {
         int scrollY = (int) (binding.scrollView.getScrollY() * 0.6f);

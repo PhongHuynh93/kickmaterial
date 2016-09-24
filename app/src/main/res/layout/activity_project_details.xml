@@ -86,7 +86,7 @@
                         android:paddingLeft="@dimen/project_number_details_padding"
                         android:paddingTop="@dimen/project_number_details_padding">
 
-                        todo - has data binding
+                        <!--todo - has data binding-->
                         <com.byoutline.secretsauce.views.RoundedImageView
                             android:id="@+id/author_photo_iv"
                             android:layout_width="@dimen/project_auth_photo_size"
