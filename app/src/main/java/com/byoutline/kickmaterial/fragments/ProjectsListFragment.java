@@ -120,6 +120,7 @@ public class ProjectsListFragment extends KickMaterialFragment implements Projec
         return rootView;
     }
 
+    // TODO: 9/24/16 get argument in different method 
     private void getArgs() {
         Bundle args = getArguments();
         if (args != null && args.containsKey(ARG_CATEGORY)) {
